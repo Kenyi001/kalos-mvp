@@ -23,7 +23,7 @@ Una plataforma moderna para conectar clientes con profesionales de belleza, perm
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/kalos-mvp.git
+git clone https://github.com/Kenyi001/kalos-mvp.git
 cd kalos-mvp
 ```
 
@@ -206,15 +206,15 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 👥 Equipo
 
-- **Desarrollo Full Stack** - [Tu Nombre](https://github.com/tu-usuario)
+- **Desarrollo Full Stack** - [Kenyi001](https://github.com/Kenyi001)
 
 ## 🆘 Soporte
 
 Si tienes algún problema o pregunta:
 
-1. Revisa los [Issues existentes](https://github.com/TU_USUARIO/kalos-mvp/issues)
-2. Crea un [nuevo Issue](https://github.com/TU_USUARIO/kalos-mvp/issues/new)
-3. Contacta al equipo: tu-email@ejemplo.com
+1. Revisa los [Issues existentes](https://github.com/Kenyi001/kalos-mvp/issues)
+2. Crea un [nuevo Issue](https://github.com/Kenyi001/kalos-mvp/issues/new)
+3. Contacta al equipo: kenyi@ejemplo.com
 
 ---
 
