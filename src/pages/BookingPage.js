@@ -987,7 +987,6 @@ window.confirmBooking = async function() {
             serviceId: bookingState.service._id,
             date: dateTime,
             time: bookingState.time,
-            duration: bookingState.service.duration.estimated,
             location: {
                 type: bookingState.location === 'professional' ? 'salon' : 'home',
                 address: bookingState.location === 'professional' 
@@ -996,15 +995,9 @@ window.confirmBooking = async function() {
                 coordinates: bookingState.location === 'client' && bookingState.clientCoordinates ? {
                     lat: bookingState.clientCoordinates.lat,
                     lng: bookingState.clientCoordinates.lng
-                } : null
+                } : undefined
             },
-            pricing: {
-                basePrice: bookingState.service.pricing.basePrice,
-                finalPrice: bookingState.service.pricing.basePrice
-            },
-            notes: {
-                client: bookingState.notes || ''
-            }
+            clientNotes: bookingState.notes || ''
         };
         
         // Debug: Ver qué estamos enviando
