@@ -139,7 +139,7 @@ const professionalsData = [
                 description: 'Barbero certificado con experiencia en cortes clásicos y modernos. Me especializo en fade cuts, degradados y diseños creativos.'
             },
             serviceLocation: {
-                type: 'salon',
+                type: 'salon_service',
                 salonAddress: {
                     street: 'Calle Libertad #567',
                     city: 'Santa Cruz de la Sierra',
