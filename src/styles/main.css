@@ -139,18 +139,51 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid var(--header-border);
 }
 
+/* Aplicar colores de header a todos los elementos internos */
+.header-main button,
+.header-main a,
+.header-main nav button {
+    color: var(--header-text) !important;
+}
+
+.header-main button:hover,
+.header-main a:hover,
+.header-main nav button:hover {
+    color: var(--header-text-hover) !important;
+}
+
+/* Logo text del header */
+.header-main .font-serif {
+    color: var(--header-text) !important;
+}
+
+.header-main .font-serif:hover {
+    color: var(--header-text-hover) !important;
+}
+
+/* Botones de borde en el header */
+.header-main .border-aegean-600 {
+    border-color: var(--header-text) !important;
+}
+
+.header-main .border-aegean-600:hover {
+    border-color: var(--header-text-hover) !important;
+    background-color: var(--header-text) !important;
+    color: white !important;
+}
+
 /* EJEMPLOS DE COMBINACIONES DE COLORES:
    
-   🌑 NEGRO CON DORADO (actual):
-   --header-bg: #000000;
+   ⚪ BLANCO CON AZUL (actual):
+   --header-bg: #FFFFFF;
    --header-border: #e6c875;
    --header-text: #1B4B7A;
    --header-text-hover: #B8860B;
    
-   ⚪ BLANCO CON AZUL:
-   --header-bg: #ffffff;
-   --header-border: #1B4B7A;
-   --header-text: #1B4B7A;
+   🌑 NEGRO CON DORADO:
+   --header-bg: #000000;
+   --header-border: #e6c875;
+   --header-text: #ffffff;
    --header-text-hover: #B8860B;
    
    🔵 AZUL EGEO:
