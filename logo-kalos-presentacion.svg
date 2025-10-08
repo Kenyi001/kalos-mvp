@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo completo con fondo transparente (para presentaciones) -->
+  <defs>
+    <linearGradient id="gradientComplete" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B4B7A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#154066;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadowComplete">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Círculo principal con degradado -->
+  <circle cx="400" cy="250" r="200" fill="url(#gradientComplete)" filter="url(#shadowComplete)"/>
+  
+  <!-- Letra K -->
+  <text x="400" y="310" font-family="'Crimson Text', serif" font-size="200" font-weight="bold" fill="white" text-anchor="middle">K</text>
+  
+  <!-- Texto "KALOS" grande -->
+  <text x="400" y="510" font-family="'Crimson Text', serif" font-size="72" font-weight="bold" fill="#1B4B7A" text-anchor="middle">KALOS</text>
+  
+  <!-- Subtítulo descriptivo -->
+  <text x="400" y="550" font-family="'Inter', sans-serif" font-size="20" font-weight="400" fill="#6b7280" text-anchor="middle" letter-spacing="4">BELLEZA MEDITERRÁNEA - SANTA CRUZ</text>
+</svg>

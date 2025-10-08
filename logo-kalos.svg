@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular con degradado mediterráneo -->
+  <defs>
+    <linearGradient id="mediterraneanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B4B7A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#154066;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Círculo de fondo con degradado -->
+  <circle cx="200" cy="200" r="180" fill="url(#mediterraneanGradient)" filter="url(#shadow)"/>
+  
+  <!-- Letra K estilizada -->
+  <text x="200" y="260" font-family="'Crimson Text', serif" font-size="180" font-weight="bold" fill="white" text-anchor="middle">K</text>
+  
+  <!-- Texto "KALOS" debajo -->
+  <text x="200" y="340" font-family="'Crimson Text', serif" font-size="42" font-weight="bold" fill="#1B4B7A" text-anchor="middle">KALOS</text>
+  
+  <!-- Subtítulo "SANTA CRUZ" -->
+  <text x="200" y="365" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#6b7280" text-anchor="middle" letter-spacing="2">SANTA CRUZ</text>
+</svg>

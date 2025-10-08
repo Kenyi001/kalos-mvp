@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logos de Kalos - Kit de Marca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #fdf6e3 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 48px;
+            color: #1B4B7A;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 60px;
+            font-size: 18px;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo-card h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 24px;
+            color: #1B4B7A;
+            margin-bottom: 10px;
+        }
+        
+        .logo-card p {
+            color: #6b7280;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .logo-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 250px;
+            background: linear-gradient(135deg, #f9fafb 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .logo-preview.dark {
+            background: linear-gradient(135deg, #1B4B7A 0%, #154066 100%);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1B4B7A 0%, #B8860B 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(27, 75, 122, 0.3);
+        }
+        
+        .color-palette {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .color-palette h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 32px;
+            color: #1B4B7A;
+            margin-bottom: 30px;
+        }
+        
+        .colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .color-item {
+            text-align: center;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 100px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #1B4B7A;
+            margin-bottom: 5px;
+        }
+        
+        .color-code {
+            font-size: 12px;
+            color: #6b7280;
+            font-family: monospace;
+        }
+        
+        .usage-guide {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .usage-guide h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 32px;
+            color: #1B4B7A;
+            margin-bottom: 20px;
+        }
+        
+        .usage-guide ul {
+            list-style-position: inside;
+            color: #6b7280;
+            line-height: 2;
+        }
+        
+        .usage-guide li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kit de Marca Kalos</h1>
+        <p class="subtitle">Todos los logos y recursos visuales de tu marca</p>
+        
+        <!-- Logos -->
+        <div class="logo-grid">
+            <!-- Logo Principal -->
+            <div class="logo-card">
+                <h3>Logo Principal</h3>
+                <p>Versión completa con degradado mediterráneo. Ideal para portadas y material principal.</p>
+                <div class="logo-preview">
+                    <img src="logo-kalos.svg" alt="Logo Kalos" style="max-width: 100%; height: auto;">
+                </div>
+                <a href="logo-kalos.svg" download class="download-btn">⬇️ Descargar SVG</a>
+            </div>
+            
+            <!-- Logo Horizontal -->
+            <div class="logo-card">
+                <h3>Logo Horizontal</h3>
+                <p>Perfecto para headers, banners y formatos anchos.</p>
+                <div class="logo-preview">
+                    <img src="logo-kalos-horizontal.svg" alt="Logo Horizontal" style="max-width: 100%; height: auto;">
+                </div>
+                <a href="logo-kalos-horizontal.svg" download class="download-btn">⬇️ Descargar SVG</a>
+            </div>
+            
+            <!-- Icono -->
+            <div class="logo-card">
+                <h3>Icono/Favicon</h3>
+                <p>Versión simplificada para apps, redes sociales y favicon.</p>
+                <div class="logo-preview">
+                    <img src="logo-kalos-icon.svg" alt="Logo Icon" style="max-width: 200px; height: auto;">
+                </div>
+                <a href="logo-kalos-icon.svg" download class="download-btn">⬇️ Descargar SVG</a>
+            </div>
+            
+            <!-- Logo Fondo Blanco -->
+            <div class="logo-card">
+                <h3>Logo Fondo Blanco</h3>
+                <p>Versión con fondo blanco para fondos oscuros o imágenes.</p>
+                <div class="logo-preview dark">
+                    <img src="logo-kalos-white-bg.svg" alt="Logo Fondo Blanco" style="max-width: 100%; height: auto;">
+                </div>
+                <a href="logo-kalos-white-bg.svg" download class="download-btn">⬇️ Descargar SVG</a>
+            </div>
+            
+            <!-- Logo Presentación -->
+            <div class="logo-card" style="grid-column: span 2;">
+                <h3>Logo para Presentaciones</h3>
+                <p>Versión grande con eslogan completo para presentaciones y material promocional.</p>
+                <div class="logo-preview">
+                    <img src="logo-kalos-presentacion.svg" alt="Logo Presentación" style="max-width: 100%; height: auto;">
+                </div>
+                <a href="logo-kalos-presentacion.svg" download class="download-btn">⬇️ Descargar SVG</a>
+            </div>
+        </div>
+        
+        <!-- Paleta de Colores -->
+        <div class="color-palette">
+            <h2>Paleta de Colores Mediterránea</h2>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #1B4B7A;"></div>
+                    <div class="color-name">Azul Egeo</div>
+                    <div class="color-code">#1B4B7A</div>
+                </div>
+                
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #154066;"></div>
+                    <div class="color-name">Azul Profundo</div>
+                    <div class="color-code">#154066</div>
+                </div>
+                
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #B8860B;"></div>
+                    <div class="color-name">Dorado Oliva</div>
+                    <div class="color-code">#B8860B</div>
+                </div>
+                
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #d97f70;"></div>
+                    <div class="color-name">Terracota</div>
+                    <div class="color-code">#D97F70</div>
+                </div>
+                
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #f8f9fa;"></div>
+                    <div class="color-name">Mármol</div>
+                    <div class="color-code">#F8F9FA</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Guía de Uso -->
+        <div class="usage-guide">
+            <h2>📖 Guía de Uso</h2>
+            <ul>
+                <li><strong>Logo Principal:</strong> Usar en sitio web, tarjetas de presentación, material impreso.</li>
+                <li><strong>Logo Horizontal:</strong> Ideal para headers de email, banners web, firmas digitales.</li>
+                <li><strong>Icono:</strong> Usar como favicon (16x16, 32x32), app icon, perfil de redes sociales.</li>
+                <li><strong>Logo Fondo Blanco:</strong> Para colocar sobre fotos, fondos de color, videos.</li>
+                <li><strong>Logo Presentación:</strong> Diapositivas, posters, material promocional grande.</li>
+                <li><strong>Espaciado:</strong> Mantener un espacio mínimo equivalente al 10% del tamaño del logo alrededor.</li>
+                <li><strong>Tamaño Mínimo:</strong> No usar el logo a menos de 24px de altura para mantener legibilidad.</li>
+                <li><strong>Colores:</strong> No modificar los colores del degradado. Si necesitas monocromático, usa el azul egeo (#1B4B7A).</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px; color: #6b7280;">
+            <p>© 2025 Kalos - Santa Cruz. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 14px;">Belleza Mediterránea en el corazón de Bolivia</p>
+        </div>
+    </div>
+</body>
+</html>

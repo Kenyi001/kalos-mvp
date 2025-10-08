@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================================= */
 .header-main {
     /* 👇 CAMBIAR ESTOS COLORES PARA MODIFICAR EL HEADER */
-    --header-bg: #000000;              /* Fondo del header (negro) */
+    --header-bg: #FFFFFF;              /* Fondo del header (blanco) */
     --header-border: #e6c875;          /* Color del borde inferior (dorado) */
     --header-text: #1B4B7A;            /* Texto principal (azul egeo) */
     --header-text-hover: #B8860B;      /* Texto al hover (dorado) */

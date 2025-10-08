@@ -156,7 +156,7 @@ export function renderLandingPage() {
             </div>
 
             <!-- CTA Section Enhanced -->
-            <div style="background: linear-gradient(135deg, var(--aegean-600) 0%, var(--terracotta-500) 50%, var(--olive-gold-600) 100%);" class="py-32 relative overflow-hidden">
+            <div style="background: linear-gradient(135deg, var(--aegean-600) 50%, var(--terracotta-500) 70%, var(--olive-gold-600) 100%);" class="py-32 relative overflow-hidden">
                 <!-- Background decoration -->
                 <div class="absolute inset-0 opacity-10">
                     <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>

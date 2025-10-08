@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo monocromático blanco (para fondos oscuros) -->
+  
+  <!-- Círculo de fondo -->
+  <circle cx="200" cy="200" r="180" fill="white"/>
+  
+  <!-- Letra K -->
+  <text x="200" y="260" font-family="'Crimson Text', serif" font-size="180" font-weight="bold" fill="#1B4B7A" text-anchor="middle">K</text>
+  
+  <!-- Texto "KALOS" -->
+  <text x="200" y="340" font-family="'Crimson Text', serif" font-size="42" font-weight="bold" fill="#1B4B7A" text-anchor="middle">KALOS</text>
+  
+  <!-- Subtítulo "SANTA CRUZ" -->
+  <text x="200" y="365" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#6b7280" text-anchor="middle" letter-spacing="2">SANTA CRUZ</text>
+</svg>
