@@ -73,10 +73,15 @@ const professionalsData = [
         services: [
             {
                 name: 'Limpieza Facial Profunda',
-                category: 'tratamiento_facial',
+                category: 'facial_limpieza',
                 description: 'Limpieza profunda con extracción de impurezas, exfoliación, mascarilla hidratante y tonificación. Incluye masaje facial relajante.',
-                pricing: { basePrice: 180, currency: 'BOB' },
-                duration: { estimated: 60, buffer: 15 },
+                pricing: { 
+                    basePrice: 180, 
+                    priceRange: { min: 150, max: 200 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 60, bufferTime: 15 },
+                includes: ['Limpieza profunda', 'Extracción', 'Mascarilla', 'Masaje facial'],
                 serviceConfig: {
                     location: 'both',
                     requiresDeposit: false
@@ -86,8 +91,13 @@ const professionalsData = [
                 name: 'Masaje Relajante Corporal',
                 category: 'masaje_relajante',
                 description: 'Masaje de cuerpo completo con aceites esenciales. Ideal para liberar tensiones y estrés.',
-                pricing: { basePrice: 250, currency: 'BOB' },
-                duration: { estimated: 90, buffer: 15 },
+                pricing: { 
+                    basePrice: 250, 
+                    priceRange: { min: 220, max: 280 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 90, bufferTime: 15 },
+                includes: ['Masaje corporal completo', 'Aceites esenciales', 'Ambiente relajante'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: false
@@ -95,10 +105,15 @@ const professionalsData = [
             },
             {
                 name: 'Depilación con Cera - Piernas Completas',
-                category: 'depilacion',
+                category: 'depilacion_cera',
                 description: 'Depilación profesional con cera de alta calidad. Incluye hidratación post-depilación.',
-                pricing: { basePrice: 120, currency: 'BOB' },
-                duration: { estimated: 45, buffer: 10 },
+                pricing: { 
+                    basePrice: 120, 
+                    priceRange: { min: 100, max: 140 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 45, bufferTime: 10 },
+                includes: ['Depilación piernas completas', 'Cera de calidad', 'Crema hidratante'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: false
@@ -159,8 +174,13 @@ const professionalsData = [
                 name: 'Corte Caballero + Arreglo de Barba',
                 category: 'corte_cabello',
                 description: 'Corte de cabello moderno con máquina y tijera, incluye arreglo y perfilado de barba con navaja.',
-                pricing: { basePrice: 80, currency: 'BOB' },
-                duration: { estimated: 45, buffer: 10 },
+                pricing: { 
+                    basePrice: 80, 
+                    priceRange: { min: 70, max: 90 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 45, bufferTime: 10 },
+                includes: ['Corte con máquina y tijera', 'Arreglo de barba', 'Perfilado'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: false
@@ -170,8 +190,13 @@ const professionalsData = [
                 name: 'Fade Cut Profesional',
                 category: 'corte_cabello',
                 description: 'Corte degradado profesional con máquina, incluye diseño de líneas y acabado con navaja.',
-                pricing: { basePrice: 90, currency: 'BOB' },
-                duration: { estimated: 50, buffer: 10 },
+                pricing: { 
+                    basePrice: 90, 
+                    priceRange: { min: 80, max: 100 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 50, bufferTime: 10 },
+                includes: ['Corte fade profesional', 'Diseño de líneas', 'Acabado con navaja'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: false
@@ -181,8 +206,13 @@ const professionalsData = [
                 name: 'Afeitado Clásico con Navaja',
                 category: 'otro',
                 description: 'Afeitado tradicional con navaja, toallas calientes y productos premium. Experiencia de barbería clásica.',
-                pricing: { basePrice: 60, currency: 'BOB' },
-                duration: { estimated: 30, buffer: 10 },
+                pricing: { 
+                    basePrice: 60, 
+                    priceRange: { min: 50, max: 70 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 30, bufferTime: 10 },
+                includes: ['Afeitado con navaja', 'Toallas calientes', 'Productos premium'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: false
@@ -244,8 +274,13 @@ const professionalsData = [
                 name: 'Manicura Completa + Esmaltado Permanente',
                 category: 'manicura',
                 description: 'Manicura profesional con limado, cutícula, hidratación y esmaltado semipermanente que dura hasta 3 semanas.',
-                pricing: { basePrice: 100, currency: 'BOB' },
-                duration: { estimated: 60, buffer: 15 },
+                pricing: { 
+                    basePrice: 100, 
+                    priceRange: { min: 80, max: 120 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 60, bufferTime: 15 },
+                includes: ['Limado', 'Arreglo de cutícula', 'Hidratación', 'Esmaltado semipermanente'],
                 serviceConfig: {
                     location: 'both',
                     requiresDeposit: false
@@ -255,8 +290,13 @@ const professionalsData = [
                 name: 'Pedicura Spa Completa',
                 category: 'pedicura',
                 description: 'Pedicura spa con exfoliación, hidratación profunda, masaje de pies y esmaltado permanente. Incluye baño de sales.',
-                pricing: { basePrice: 120, currency: 'BOB' },
-                duration: { estimated: 75, buffer: 15 },
+                pricing: { 
+                    basePrice: 120, 
+                    priceRange: { min: 100, max: 140 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 75, bufferTime: 15 },
+                includes: ['Baño de sales', 'Exfoliación', 'Masaje de pies', 'Esmaltado permanente'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: false
@@ -266,8 +306,13 @@ const professionalsData = [
                 name: 'Uñas Esculpidas en Gel',
                 category: 'unas_gel',
                 description: 'Uñas esculpidas en gel con diseño personalizado. Incluye decoración básica y acabado brillante.',
-                pricing: { basePrice: 150, currency: 'BOB' },
-                duration: { estimated: 90, buffer: 15 },
+                pricing: { 
+                    basePrice: 150, 
+                    priceRange: { min: 130, max: 180 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 90, bufferTime: 15 },
+                includes: ['Uñas esculpidas en gel', 'Diseño personalizado', 'Decoración básica', 'Acabado brillante'],
                 serviceConfig: {
                     location: 'salon',
                     requiresDeposit: true
@@ -277,8 +322,13 @@ const professionalsData = [
                 name: 'Diseño de Uñas (Nail Art)',
                 category: 'manicura',
                 description: 'Diseño artístico personalizado en uñas naturales o esculpidas. Incluye decoraciones, strass y efectos especiales.',
-                pricing: { basePrice: 80, currency: 'BOB' },
-                duration: { estimated: 45, buffer: 10 },
+                pricing: { 
+                    basePrice: 80, 
+                    priceRange: { min: 60, max: 100 },
+                    currency: 'BOB' 
+                },
+                duration: { estimated: 45, bufferTime: 10 },
+                includes: ['Diseño artístico', 'Decoraciones', 'Strass', 'Efectos especiales'],
                 serviceConfig: {
                     location: 'both',
                     requiresDeposit: false
