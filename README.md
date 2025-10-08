@@ -2,6 +2,8 @@
 
 Una plataforma moderna para conectar clientes con profesionales de belleza, permitiendo reservas de servicios de manera fácil y eficiente.
 
+> ⚠️ **IMPORTANTE**: Si obtienes el error `ERR_CONNECTION_REFUSED` al registrarte, ejecuta el script `fix-port.bat` (Windows) o `fix-port.sh` (Linux/Mac) para corregir el puerto automáticamente. Ver [SOLUCION_ERROR_PUERTO.md](SOLUCION_ERROR_PUERTO.md) para más detalles.
+
 ## ✨ Características
 
 - 🔐 **Autenticación completa** - Registro e inicio de sesión para clientes y profesionales
@@ -146,14 +148,33 @@ kalos-mvp/
 
 ## 🧪 Datos de Prueba
 
-Para poblar la base de datos with datos de prueba:
+### Opción 1: Profesionales de Santa Cruz (Recomendado)
+
+Popula la base de datos con 3 profesionales reales de Santa Cruz con sus servicios:
+
+```bash
+cd backend
+node scripts/seed-santa-cruz-professionals.js
+```
+
+**Profesionales creados:**
+- 🧖‍♀️ **María González** - Estética María (Tratamientos faciales, masajes, depilación)
+  - Email: maria.gonzalez@kalos.com | Password: kalos2024
+  
+- ✂️ **Carlos Pérez** - Barbería Premium (Cortes modernos, fade cuts, afeitado)
+  - Email: carlos.perez@kalos.com | Password: kalos2024
+  
+- 💅 **Ana Rodríguez** - Ana Nails & Beauty (Manicura, pedicura, uñas esculpidas)
+  - Email: ana.rodriguez@kalos.com | Password: kalos2024
+
+### Opción 2: Usuarios básicos de prueba
 
 ```bash
 cd backend
 node scripts/create-test-users.js
 ```
 
-### Usuarios de prueba:
+**Usuarios de prueba:**
 - **Cliente**: maria.cliente@test.com / 123456
 - **Profesional**: sofia.peluquera@test.com / 123456
 

@@ -112,17 +112,25 @@ npm run dev
 
 ## 👥 Usuarios de prueba
 
-Después de iniciar la app, crea usuarios de prueba:
+Después de iniciar la app, crea profesionales de Santa Cruz con servicios:
 
+```bash
+cd backend
+node scripts/seed-santa-cruz-professionals.js
+cd ..
+```
+
+**Credenciales de profesionales:**
+- 🧖‍♀️ **María González** - maria.gonzalez@kalos.com / kalos2024
+- ✂️ **Carlos Pérez** - carlos.perez@kalos.com / kalos2024
+- 💅 **Ana Rodríguez** - ana.rodriguez@kalos.com / kalos2024
+
+O crea usuarios básicos de prueba:
 ```bash
 cd backend
 node scripts/create-test-users.js
 cd ..
 ```
-
-**Credenciales:**
-- **Cliente**: maria.cliente@test.com / 123456
-- **Profesional**: sofia.peluquera@test.com / 123456
 
 ---
 

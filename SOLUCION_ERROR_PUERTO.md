@@ -46,11 +46,33 @@ http://localhost:3001  ✅ CORRECTO
 
 ## 🚀 PARA LA OTRA PC - PASOS A SEGUIR
 
-### Opción 1: Re-clonar (Recomendado)
+### ⚡ Opción 1: Script automático (MÁS FÁCIL) ✅
+
+```bash
+# 1. Ir al directorio del proyecto
+cd C:\Proyectos\kalos-mvp
+
+# 2. Hacer pull de los cambios
+git pull origin main
+
+# 3. Ejecutar el script de corrección
+# Windows:
+fix-port.bat
+
+# Linux/Mac:
+chmod +x fix-port.sh
+./fix-port.sh
+
+# 4. Iniciar
+npm run dev
+```
+
+### Opción 2: Re-clonar
 
 ```bash
 # 1. Eliminar el repositorio anterior (si existe)
-rm -rf kalos-mvp
+cd C:\Proyectos
+rmdir /s /q kalos-mvp
 
 # 2. Clonar nuevamente
 git clone https://github.com/Kenyi001/kalos-mvp.git
@@ -68,7 +90,7 @@ chmod +x install.sh
 npm run dev
 ```
 
-### Opción 2: Actualizar repositorio existente
+### Opción 3: Manual
 
 ```bash
 # 1. Ir al directorio del proyecto
