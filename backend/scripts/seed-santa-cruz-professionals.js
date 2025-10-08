@@ -28,7 +28,7 @@ const professionalsData = [
             email: 'maria.gonzalez@kalos.com',
             password: 'kalos2024',
             role: 'professional',
-            phone: '+591 3 345-6789'
+            phone: '+59133456789'
         },
         professional: {
             businessName: 'Estética María - Santa Cruz',
@@ -64,8 +64,8 @@ const professionalsData = [
                 }
             },
             contactInfo: {
-                businessPhone: '+591 3 345-6789',
-                whatsapp: '+591 70123456'
+                businessPhone: '+59133456789',
+                whatsapp: '+59170123456'
             },
             profileImage: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
             isAvailable: true
@@ -113,7 +113,7 @@ const professionalsData = [
             email: 'carlos.perez@kalos.com',
             password: 'kalos2024',
             role: 'professional',
-            phone: '+591 3 456-7890'
+            phone: '+59134567890'
         },
         professional: {
             businessName: 'Barbería Premium Carlos',
@@ -148,8 +148,8 @@ const professionalsData = [
                 }
             },
             contactInfo: {
-                businessPhone: '+591 3 456-7890',
-                whatsapp: '+591 71234567'
+                businessPhone: '+59134567890',
+                whatsapp: '+59171234567'
             },
             profileImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
             isAvailable: true
@@ -197,7 +197,7 @@ const professionalsData = [
             email: 'ana.rodriguez@kalos.com',
             password: 'kalos2024',
             role: 'professional',
-            phone: '+591 3 567-8901'
+            phone: '+59135678901'
         },
         professional: {
             businessName: 'Ana Nails & Beauty',
@@ -233,8 +233,8 @@ const professionalsData = [
                 }
             },
             contactInfo: {
-                businessPhone: '+591 3 567-8901',
-                whatsapp: '+591 72345678'
+                businessPhone: '+59135678901',
+                whatsapp: '+59172345678'
             },
             profileImage: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
             isAvailable: true
