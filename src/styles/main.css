@@ -6,12 +6,7 @@
    ============================================================================= */
 * {
     margin: 0;
-   .text-olive-gold-100 { color: var(--olive-gold-100); }
-.text-olive-gold-200 { color: var(--olive-gold-200); }
-.text-olive-gold-300 { color: var(--olive-gold-300); }
-.text-olive-gold-400 { color: var(--olive-gold-400); }
-.text-olive-gold-500 { color: var(--olive-gold-500); }
-.text-olive-gold-600 { color: var(--olive-gold-600); }ing: 0;
+    padding: 0;
     box-sizing: border-box;
     transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -482,6 +477,9 @@ h1, h2, h3, h4, h5, h6 {
 .bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
 .bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
 .bg-white\/30 { background-color: rgba(255, 255, 255, 0.3); }
+
+.bg-aegean-600\/95 { background-color: rgba(27, 75, 122, 0.95); }
+.bg-aegean-600\/80 { background-color: rgba(27, 75, 122, 0.8); }
 
 .bg-gradient-mediterranean { background: var(--gradient-mediterranean); }
 .bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
