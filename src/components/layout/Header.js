@@ -6,7 +6,7 @@ export function createHeader() {
         if (!headerEl) return;
         
         headerEl.innerHTML = `
-            <header class="bg-white/95 backdrop-blur-sm shadow-xl sticky top-0 z-50 border-b border-olive-gold-200">
+            <header class="bg-black backdrop-blur-sm shadow-xl sticky top-0 z-50 border-b border-olive-gold-200">
                 <div class="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12">
                     <!-- Desktop Header -->
                     <div class="hidden md:flex justify-between items-center h-24">
@@ -105,12 +105,11 @@ export function createHeader() {
                                         Iniciar sesión
                                     </span>
                                 </button>
-                                <button onclick="router.navigate('/auth/register')" class="group relative bg-gradient-mediterranean text-white font-semibold px-8 py-3 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105">
+                                <button onclick="router.navigate('/auth/register')" class="btn-register group relative text-white font-semibold px-8 py-3 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105">
                                     <span class="relative z-10 flex items-center">
                                         <i class="fas fa-user-plus mr-2"></i>
                                         Registrarse
                                     </span>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-olive-gold-600 to-terracotta-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </button>
                             `}
                         </div>

@@ -11,8 +11,8 @@
     transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Reset button appearance - but preserve Leaflet controls */
-button:not(.leaflet-control-zoom-in):not(.leaflet-control-zoom-out):not(.leaflet-popup-close-button) {
+/* Reset button appearance - but preserve Leaflet controls and custom buttons */
+button:not(.leaflet-control-zoom-in):not(.leaflet-control-zoom-out):not(.leaflet-popup-close-button):not(.btn-register) {
     background: none;
     border: none;
     outline: none;
@@ -122,6 +122,57 @@ h1, h2, h3, h4, h5, h6 {
 /* =============================================================================
    BUTTON SYSTEM
    ============================================================================= */
+
+/* 🎨 BOTÓN REGISTRARSE - CAMBIAR COLORES AQUÍ */
+.btn-register {
+    /* 👇 CAMBIAR ESTOS DOS COLORES PARA MODIFICAR EL BOTÓN */
+    --btn-color: #dc2626;         /* Color normal (rojo) */
+    --btn-color-hover: #b91c1c;   /* Color al pasar el mouse (rojo oscuro) */
+    
+    /* Estilos del botón */
+    background-color: var(--btn-color) !important;
+    border: none !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-register:hover {
+    background-color: var(--btn-color-hover) !important;
+}
+
+/* EJEMPLOS DE COLORES PARA COPIAR Y PEGAR:
+   
+   🔴 ROJO (actual):
+   --btn-color: #dc2626;
+   --btn-color-hover: #b91c1c;
+   
+   🔵 AZUL MEDITERRÁNEO (original):
+   --btn-color: #1B4B7A;
+   --btn-color-hover: #154066;
+   
+   🟢 VERDE:
+   --btn-color: #16a34a;
+   --btn-color-hover: #15803d;
+   
+   🟣 MORADO:
+   --btn-color: #9333ea;
+   --btn-color-hover: #7c3aed;
+   
+   🟠 NARANJA:
+   --btn-color: #ea580c;
+   --btn-color-hover: #c2410c;
+   
+   🟡 DORADO:
+   --btn-color: #B8860B;
+   --btn-color-hover: #A0750A;
+   
+   ⚫ NEGRO:
+   --btn-color: #1f2937;
+   --btn-color-hover: #111827;
+*/
+
 .btn-primary {
     background: var(--gradient-mediterranean);
     color: white;
@@ -463,6 +514,8 @@ h1, h2, h3, h4, h5, h6 {
 .bg-marble-50 { background-color: var(--marble-50); }
 .bg-marble-100 { background-color: var(--marble-100); }
 .bg-marble-200 { background-color: var(--marble-200); }
+.bg-red-600 { background-color: var(--red-600); }
+.bg-red-700 { background-color: #b91c1c; }
 .bg-olive-gold-50 { background-color: var(--olive-gold-50); }
 .bg-olive-gold-100 { background-color: var(--olive-gold-100); }
 .bg-olive-gold-400 { background-color: var(--olive-gold-400); }
@@ -652,6 +705,7 @@ h1, h2, h3, h4, h5, h6 {
 .hover\:bg-white:hover { background-color: white; }
 .hover\:bg-white\/10:hover { background-color: rgba(255, 255, 255, 0.1); }
 .hover\:bg-terracotta-100:hover { background-color: var(--terracotta-100); }
+.hover\:bg-red-700:hover { background-color: #b91c1c; }
 
 .hover\:border-aegean-700:hover { border-color: var(--aegean-700); }
 .hover\:border-olive-gold-600:hover { border-color: var(--olive-gold-600); }
