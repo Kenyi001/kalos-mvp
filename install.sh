@@ -60,16 +60,21 @@ cd ..
 
 # Crear archivo .env del backend si no existe
 if [ ! -f "backend/.env" ]; then
-    show_warning "Creando archivo .env de ejemplo en backend/"
-    cat > backend/.env << EOL
+    show_warning "Creando archivo .env desde .env.example..."
+    if [ -f "backend/.env.example" ]; then
+        cp backend/.env.example backend/.env
+        show_message "Archivo .env creado en backend/"
+    else
+        show_warning "Creando .env manualmente..."
+        cat > backend/.env << EOL
 # Database
-MONGODB_URI=mongodb://localhost:27017/kalos
+MONGODB_URI=mongodb://localhost:27017/kalos-dev
 
 # JWT
-JWT_SECRET=tu_jwt_secret_muy_seguro_cambialo_en_produccion
+JWT_SECRET=kalos_jwt_secret_2024_super_secure_key_change_in_production
 
 # Server
-PORT=5000
+PORT=3001
 NODE_ENV=development
 
 # Cloudinary (opcional - para subida de imágenes)

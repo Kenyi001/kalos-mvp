@@ -36,16 +36,25 @@ cd ..
 
 REM Crear archivo .env del backend si no existe
 if not exist "backend\.env" (
-    echo ⚠️  Creando archivo .env de ejemplo en backend\
+    echo ⚠️  Creando archivo .env desde .env.example...
+    copy "backend\.env.example" "backend\.env" >nul
+    echo ✅ Archivo .env creado en backend\
+) else (
+    echo ✅ Archivo .env ya existe en backend\
+)
+
+REM Mensaje de backup para creación manual del .env
+if not exist "backend\.env" (
+    echo ⚠️  No se pudo copiar .env.example, creando .env manualmente...
     (
         echo # Database
-        echo MONGODB_URI=mongodb://localhost:27017/kalos
+        echo MONGODB_URI=mongodb://localhost:27017/kalos-dev
         echo.
         echo # JWT
-        echo JWT_SECRET=tu_jwt_secret_muy_seguro_cambialo_en_produccion
+        echo JWT_SECRET=kalos_jwt_secret_2024_super_secure_key_change_in_production
         echo.
         echo # Server
-        echo PORT=5000
+        echo PORT=3001
         echo NODE_ENV=development
         echo.
         echo # Cloudinary ^(opcional - para subida de imágenes^)

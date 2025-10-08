@@ -41,34 +41,50 @@ cd ..
 
 ### 3. Configuración de variables de entorno
 
-Crea un archivo `.env` en la carpeta `backend/`:
+Copia el archivo de ejemplo `.env.example` a `.env` en la carpeta `backend/`:
+
+```bash
+# Windows
+copy backend\.env.example backend\.env
+
+# Linux/Mac
+cp backend/.env.example backend/.env
+```
+
+O crea un archivo `.env` manualmente en la carpeta `backend/` con este contenido:
 
 ```env
-# Database
-MONGODB_URI=mongodb://localhost:27017/kalos
+# Variables de entorno para desarrollo
+NODE_ENV=development
+PORT=3001
+
+# Base de datos
+MONGODB_URI=mongodb://localhost:27017/kalos-dev
 
 # JWT
-JWT_SECRET=tu_jwt_secret_muy_seguro
+JWT_SECRET=kalos_jwt_secret_2024_super_secure_key_change_in_production
+JWT_EXPIRE=7d
 
-# Cloudinary (para subida de imágenes)
-CLOUDINARY_CLOUD_NAME=tu_cloud_name
-CLOUDINARY_API_KEY=tu_api_key
-CLOUDINARY_API_SECRET=tu_api_secret
+# Cloudinary para imágenes
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
 
-# Stripe (para pagos)
-STRIPE_SECRET_KEY=sk_test_tu_stripe_secret_key
-STRIPE_PUBLISHABLE_KEY=pk_test_tu_stripe_publishable_key
-
-# Email (opcional - para notificaciones)
+# Email (Nodemailer)
 EMAIL_HOST=smtp.gmail.com
 EMAIL_PORT=587
-EMAIL_USER=tu_email@gmail.com
-EMAIL_PASS=tu_password_de_aplicacion
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
 
-# Server
-PORT=5000
-NODE_ENV=development
+# Stripe para pagos
+STRIPE_PUBLIC_KEY=pk_test_your_stripe_public_key
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+
+# Frontend URL (para CORS)
+FRONTEND_URL=http://localhost:5173
 ```
+
+> ⚠️ **IMPORTANTE**: Asegúrate de que el puerto sea **3001** (no 5000)
 
 ### 4. Ejecutar la aplicación
 
@@ -90,8 +106,8 @@ npm run dev:frontend
 ## 🌐 URLs de Acceso
 
 - **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:5000
-- **API Docs**: http://localhost:5000/api/docs (próximamente)
+- **Backend API**: http://localhost:3001
+- **Health Check**: http://localhost:3001/health
 
 ## 📁 Estructura del Proyecto
 
@@ -210,11 +226,16 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 🆘 Soporte
 
-Si tienes algún problema o pregunta:
+Si tienes algún problema:
 
-1. Revisa los [Issues existentes](https://github.com/Kenyi001/kalos-mvp/issues)
-2. Crea un [nuevo Issue](https://github.com/Kenyi001/kalos-mvp/issues/new)
-3. Contacta al equipo: kenyi@ejemplo.com
+1. Revisa la [Guía de Solución de Problemas](TROUBLESHOOTING.md) 📋
+2. Consulta los [Issues existentes](https://github.com/Kenyi001/kalos-mvp/issues)
+3. Crea un [nuevo Issue](https://github.com/Kenyi001/kalos-mvp/issues/new)
+
+### Problemas Comunes
+- **Error: ERR_CONNECTION_REFUSED en puerto 3001** → Ver [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+- **MongoDB no conecta** → Ver [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+- **Puerto ya en uso** → Ver [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
 ---
 
