@@ -123,6 +123,55 @@ h1, h2, h3, h4, h5, h6 {
    BUTTON SYSTEM
    ============================================================================= */
 
+/* =============================================================================
+   🎨 HEADER - CAMBIAR COLORES Y ESTILOS AQUÍ
+   ============================================================================= */
+.header-main {
+    /* 👇 CAMBIAR ESTOS COLORES PARA MODIFICAR EL HEADER */
+    --header-bg: #000000;              /* Fondo del header (negro) */
+    --header-border: #e6c875;          /* Color del borde inferior (dorado) */
+    --header-text: #1B4B7A;            /* Texto principal (azul egeo) */
+    --header-text-hover: #B8860B;      /* Texto al hover (dorado) */
+    --header-logo-bg: linear-gradient(135deg, #1B4B7A 0%, #154066 50%, #B8860B 100%); /* Fondo del logo */
+    
+    /* Aplicar estilos */
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+}
+
+/* EJEMPLOS DE COMBINACIONES DE COLORES:
+   
+   🌑 NEGRO CON DORADO (actual):
+   --header-bg: #000000;
+   --header-border: #e6c875;
+   --header-text: #1B4B7A;
+   --header-text-hover: #B8860B;
+   
+   ⚪ BLANCO CON AZUL:
+   --header-bg: #ffffff;
+   --header-border: #1B4B7A;
+   --header-text: #1B4B7A;
+   --header-text-hover: #B8860B;
+   
+   🔵 AZUL EGEO:
+   --header-bg: #1B4B7A;
+   --header-border: #B8860B;
+   --header-text: #ffffff;
+   --header-text-hover: #e6c875;
+   
+   🟡 DORADO:
+   --header-bg: #B8860B;
+   --header-border: #1B4B7A;
+   --header-text: #ffffff;
+   --header-text-hover: #1B4B7A;
+   
+   ⚫ GRIS OSCURO:
+   --header-bg: #1f2937;
+   --header-border: #B8860B;
+   --header-text: #ffffff;
+   --header-text-hover: #e6c875;
+*/
+
 /* 🎨 BOTÓN REGISTRARSE - CAMBIAR COLORES AQUÍ */
 .btn-register {
     /* 👇 CAMBIAR ESTOS DOS COLORES PARA MODIFICAR EL BOTÓN */

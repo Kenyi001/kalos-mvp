@@ -6,7 +6,7 @@ export function createHeader() {
         if (!headerEl) return;
         
         headerEl.innerHTML = `
-            <header class="bg-black backdrop-blur-sm shadow-xl sticky top-0 z-50 border-b border-olive-gold-200">
+            <header class="header-main backdrop-blur-sm shadow-xl sticky top-0 z-50">
                 <div class="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12">
                     <!-- Desktop Header -->
                     <div class="hidden md:flex justify-between items-center h-24">

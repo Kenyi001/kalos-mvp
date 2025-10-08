@@ -1,9 +1,80 @@
-# 🎨 Guía Rápida: Cambiar Colores del Botón "Registrarse"
+# 🎨 Guía Rápida: Cambiar Colores y Estilos
+
+## 📋 Índice
+1. [Cambiar colores del Header](#header)
+2. [Cambiar colores del botón Registrarse](#boton-registrarse)
+
+---
+
+# 🏠 HEADER
+
+## 📍 Dónde cambiar los colores del Header
+
+**Archivo:** `src/styles/main.css`  
+**Líneas:** 125-138 (aproximadamente)
+
+Busca esta sección en el archivo:
+
+```css
+.header-main {
+    /* 👇 CAMBIAR ESTOS COLORES PARA MODIFICAR EL HEADER */
+    --header-bg: #000000;              /* Fondo del header */
+    --header-border: #e6c875;          /* Borde inferior */
+    --header-text: #1B4B7A;            /* Texto principal */
+    --header-text-hover: #B8860B;      /* Texto al hover */
+}
+```
+
+## 🎨 Combinaciones de Colores para el Header
+
+### 🌑 Negro con Dorado (Actual - Elegante)
+```css
+--header-bg: #000000;              /* Negro */
+--header-border: #e6c875;          /* Dorado claro */
+--header-text: #1B4B7A;            /* Azul */
+--header-text-hover: #B8860B;      /* Dorado */
+```
+
+### ⚪ Blanco con Azul (Limpio y Profesional)
+```css
+--header-bg: #ffffff;              /* Blanco */
+--header-border: #1B4B7A;          /* Azul */
+--header-text: #1B4B7A;            /* Azul */
+--header-text-hover: #B8860B;      /* Dorado */
+```
+
+### 🔵 Azul Egeo (Mediterráneo)
+```css
+--header-bg: #1B4B7A;              /* Azul egeo */
+--header-border: #B8860B;          /* Dorado */
+--header-text: #ffffff;            /* Blanco */
+--header-text-hover: #e6c875;      /* Dorado claro */
+```
+
+### 🟡 Dorado (Lujoso)
+```css
+--header-bg: #B8860B;              /* Dorado */
+--header-border: #1B4B7A;          /* Azul */
+--header-text: #ffffff;            /* Blanco */
+--header-text-hover: #1B4B7A;      /* Azul */
+```
+
+### ⚫ Gris Oscuro (Moderno)
+```css
+--header-bg: #1f2937;              /* Gris oscuro */
+--header-border: #B8860B;          /* Dorado */
+--header-text: #ffffff;            /* Blanco */
+--header-text-hover: #e6c875;      /* Dorado claro */
+```
+
+---
+
+# 🔘 BOTÓN REGISTRARSE
 
 ## 📍 Dónde cambiar los colores
 
 **Archivo:** `src/styles/main.css`  
-**Líneas:** 125-127 (aproximadamente)
+**Líneas:** 171-173 (aproximadamente)
 
 Busca esta sección en el archivo:
 
