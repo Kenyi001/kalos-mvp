@@ -61,7 +61,7 @@ const bookingSchema = new mongoose.Schema({
         },
         currency: {
             type: String,
-            default: 'EUR'
+            default: 'BOB'
         },
         depositPaid: {
             type: Boolean,

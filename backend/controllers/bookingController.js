@@ -207,7 +207,7 @@ export const createBooking = async (req, res, next) => {
             pricing: {
                 basePrice: service.pricing.basePrice,
                 finalPrice: service.pricing.basePrice, // Puede ajustarse con descuentos
-                currency: 'EUR',
+                currency: 'BOB',
                 depositAmount: service.serviceConfig.requiresDeposit ? 
                     service.pricing.basePrice * 0.2 : 0
             },

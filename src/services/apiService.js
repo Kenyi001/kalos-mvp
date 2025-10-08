@@ -355,7 +355,7 @@ export const formatters = {
 
     // Formatear precio
     formatPrice(price) {
-        return `€${price}`;
+        return `Bs ${price}`;
     },
 
     // Formatear estado de reserva
@@ -535,7 +535,7 @@ export const formatTime = (date) => {
 
 export const formatPrice = (price) => {
     if (!price && price !== 0) return 'N/A';
-    return `${price.toFixed(2)}€`;
+    return `Bs ${price.toFixed(2)}`;
 };
 
 export const formatStatus = (status) => {

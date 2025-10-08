@@ -286,7 +286,7 @@ function renderBookingsList(bookings, filter) {
                     </div>
                 </div>
                 <div class="flex items-start text-gray-700">
-                    <i class="fas fa-euro-sign text-purple-600 mr-2 mt-0.5"></i>
+                    <i class="fas fa-dollar-sign text-purple-600 mr-2 mt-0.5"></i>
                     <div>
                         <p class="text-xs text-gray-500">Precio</p>
                         <p class="font-bold text-lg text-purple-600">${booking.pricing?.finalPrice ? formatPrice(booking.pricing.finalPrice) : 'N/A'}</p>

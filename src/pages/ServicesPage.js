@@ -144,7 +144,7 @@ function renderServiceCard(service) {
                         </span>
                     </div>
                     <div class="text-right">
-                        <span class="text-2xl font-bold text-primary">€${service.pricing?.basePrice || 'N/A'}</span>
+                        <span class="text-2xl font-bold text-primary">Bs ${service.pricing?.basePrice || 'N/A'}</span>
                         ${service.duration?.estimated ? `
                             <p class="text-xs text-gray-500">⏱️ ${service.duration.estimated} min</p>
                         ` : ''}

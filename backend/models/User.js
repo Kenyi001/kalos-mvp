@@ -89,7 +89,7 @@ const userSchema = new mongoose.Schema({
         },
         currency: {
             type: String,
-            default: 'EUR'
+            default: 'BOB'
         },
         notifications: {
             email: {

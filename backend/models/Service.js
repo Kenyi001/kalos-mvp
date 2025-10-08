@@ -68,7 +68,7 @@ const serviceSchema = new mongoose.Schema({
         },
         currency: {
             type: String,
-            default: 'EUR'
+            default: 'BOB'
         },
         // Precios variables según opciones
         options: [{

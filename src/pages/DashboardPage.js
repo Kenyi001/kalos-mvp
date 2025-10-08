@@ -281,7 +281,7 @@ function renderBookingsList() {
                 <div><i class="fas fa-calendar mr-2"></i>${booking.date ? formatDate(booking.date) : 'N/A'}</div>
                 <div><i class="fas fa-clock mr-2"></i>${booking.time || 'N/A'}</div>
                 <div><i class="fas fa-map-marker-alt mr-2"></i>${booking.location?.type === 'salon' ? 'En el local' : 'A domicilio'}</div>
-                <div><i class="fas fa-euro-sign mr-2"></i>${booking.pricing?.finalPrice ? formatPrice(booking.pricing.finalPrice) : 'N/A'}</div>
+                <div><i class="fas fa-dollar-sign mr-2"></i>${booking.pricing?.finalPrice ? formatPrice(booking.pricing.finalPrice) : 'N/A'}</div>
             </div>
             
             <div class="flex space-x-2">

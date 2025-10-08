@@ -235,7 +235,7 @@ export async function renderProfessionalProfilePage(params) {
                                             </p>
                                             <div class="flex justify-between items-center">
                                                 <div>
-                                                    <span class="font-semibold text-primary">${service.pricing.basePrice}€</span>
+                                                    <span class="font-semibold text-primary">Bs ${service.pricing.basePrice}</span>
                                                     <span class="text-xs text-gray-500 ml-1">/ ${service.duration.estimated}min</span>
                                                 </div>
                                                 <button onclick="router.navigate('/booking/new?pro=${professional._id}&service=${service._id}')" 

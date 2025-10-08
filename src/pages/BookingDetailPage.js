@@ -195,7 +195,7 @@ function renderBookingDetail() {
                     <!-- Precio -->
                     <div class="bg-white rounded-lg shadow-sm p-6">
                         <h2 class="font-bold text-xl mb-4 flex items-center text-gray-900">
-                            <i class="fas fa-euro-sign text-purple-600 mr-3"></i>
+                            <i class="fas fa-dollar-sign text-purple-600 mr-3"></i>
                             Información de precio
                         </h2>
                         <div class="space-y-3">

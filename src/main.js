@@ -376,7 +376,7 @@ window.utils = {
     
     // Formatear precios
     formatPrice: (price) => {
-        return `${price}€`;
+        return `Bs ${price}`;
     },
     
     // Debounce para búsquedas

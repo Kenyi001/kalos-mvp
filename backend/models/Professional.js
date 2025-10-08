@@ -199,7 +199,7 @@ const professionalSchema = new mongoose.Schema({
     pricingConfig: {
         currency: {
             type: String,
-            default: 'EUR'
+            default: 'BOB'
         },
         acceptsDeposits: {
             type: Boolean,
