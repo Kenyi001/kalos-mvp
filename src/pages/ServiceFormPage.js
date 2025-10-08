@@ -197,12 +197,13 @@ export function renderServiceFormPage() {
                                     <!-- Duración -->
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 mb-2">
-                                            Duración estimada *
+                                            Duración estimada (minutos) *
                                         </label>
-                                        <input type="text" id="service-duration" required 
-                                               
+                                        <input type="number" id="service-duration" required 
+                                               min="15" max="480" step="5"
                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                               placeholder="Ej: 45 min, 1h 30min, 2-3h">
+                                               placeholder="Ej: 45">
+                                        <p class="text-xs text-gray-500 mt-1">Mínimo 15 minutos, máximo 8 horas (480 min)</p>
                                     </div>
 
                                     <!-- Ubicación del Servicio -->
@@ -307,6 +308,14 @@ export function renderServiceFormPage() {
         if (window.initializePriceCalculator) {
             window.initializePriceCalculator();
         }
+        
+        // Establecer valores por defecto si es un servicio nuevo
+        if (!service) {
+            const durationInput = document.getElementById('service-duration');
+            if (durationInput && !durationInput.value) {
+                durationInput.value = 60; // 60 minutos por defecto
+            }
+        }
     }, 100);
 }
 
@@ -400,6 +409,18 @@ window.handleServiceFormSubmit = async function(event, serviceId = null) {
         
         if (priceMin > priceMax) {
             toast.error('El precio mínimo no puede ser mayor al precio máximo');
+            loading.hide();
+            return;
+        }
+        
+        if (durationValue < 15) {
+            toast.error('La duración mínima es 15 minutos');
+            loading.hide();
+            return;
+        }
+        
+        if (durationValue > 480) {
+            toast.error('La duración máxima es 8 horas (480 minutos)');
             loading.hide();
             return;
         }
