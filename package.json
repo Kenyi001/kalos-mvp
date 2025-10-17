@@ -34,11 +34,27 @@
     "backend": "cd backend && npm start",
     "frontend": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "firebase": "^10.5.0",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.40.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.10.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.4",
+    "stripe": "^13.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",
