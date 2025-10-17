@@ -88,11 +88,31 @@ app.get('/', (req, res) => {
     success: true,
     status: 'ok', 
     message: 'Kalos API is running',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    path: req.path,
+    originalUrl: req.originalUrl
   });
 });
 
 app.get('/health', (req, res) => {
+  res.json({ 
+    success: true,
+    status: 'healthy',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/api', (req, res) => {
+  res.json({ 
+    success: true,
+    status: 'ok', 
+    message: 'Kalos API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/api/health', (req, res) => {
   res.json({ 
     success: true,
     status: 'healthy',
@@ -108,6 +128,14 @@ app.use('/api/services', serviceRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/upload', uploadRoutes);
+
+// También montar SIN prefijo /api como fallback
+app.use('/auth', authRoutes);
+app.use('/professionals', professionalRoutes);
+app.use('/services', serviceRoutes);
+app.use('/bookings', bookingRoutes);
+app.use('/users', userRoutes);
+app.use('/upload', uploadRoutes);
 
 // Manejo de rutas no encontradas
 app.use('*', (req, res) => {
