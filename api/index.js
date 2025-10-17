@@ -119,5 +119,13 @@ app.use((err, req, res, next) => {
   });
 });
 
+// Para desarrollo local
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`🚀 API local en puerto ${PORT}`);
+  });
+}
+
 // Exportar para Vercel Serverless Functions
 export default app;
