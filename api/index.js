@@ -46,6 +46,9 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Conectar a BD antes de cada request
 app.use(async (req, res, next) => {
+  // Log para debugging en Vercel
+  console.log(`📍 ${req.method} ${req.path} - Query:`, req.query);
+  
   try {
     await connectDB();
     next();
@@ -68,6 +71,17 @@ import bookingRoutes from '../backend/routes/bookings.js';
 import userRoutes from '../backend/routes/users.js';
 import uploadRoutes from '../backend/routes/upload.js';
 
+// Debug middleware
+app.use((req, res, next) => {
+  console.log('📍 Request:', {
+    method: req.method,
+    path: req.path,
+    originalUrl: req.originalUrl,
+    baseUrl: req.baseUrl
+  });
+  next();
+});
+
 // Health check en la raíz de /api
 app.get('/', (req, res) => {
   res.json({ 
@@ -87,13 +101,13 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Montar rutas SIN el prefijo /api (Vercel ya lo añade)
-app.use('/auth', authRoutes);
-app.use('/professionals', professionalRoutes);
-app.use('/services', serviceRoutes);
-app.use('/bookings', bookingRoutes);
-app.use('/users', userRoutes);
-app.use('/upload', uploadRoutes);
+// Montar rutas CON el prefijo /api para Vercel
+app.use('/api/auth', authRoutes);
+app.use('/api/professionals', professionalRoutes);
+app.use('/api/services', serviceRoutes);
+app.use('/api/bookings', bookingRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // Manejo de rutas no encontradas
 app.use('*', (req, res) => {
