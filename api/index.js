@@ -1,24 +1,62 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-// Configuración de __dirname para ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import mongoose from 'mongoose';
 
 dotenv.config();
+
+// Conectar a MongoDB (con cache para serverless)
+let cachedDb = null;
+
+const connectDB = async () => {
+  if (cachedDb && mongoose.connection.readyState === 1) {
+    console.log('✅ Usando conexión existente de MongoDB');
+    return cachedDb;
+  }
+
+  try {
+    const db = await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+    });
+    
+    cachedDb = db;
+    console.log('✅ MongoDB conectado:', db.connection.host);
+    return db;
+  } catch (error) {
+    console.error('❌ Error conectando a MongoDB:', error.message);
+    throw error;
+  }
+};
 
 const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
-  credentials: true
+  origin: '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Conectar a BD antes de cada request
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    res.status(500).json({ 
+      success: false,
+      error: { 
+        message: 'Error de conexión a la base de datos',
+        status: 500
+      }
+    });
+  }
+});
 
 // Importar rutas del backend
 import authRoutes from '../backend/routes/auth.js';
@@ -31,6 +69,7 @@ import uploadRoutes from '../backend/routes/upload.js';
 // Health check
 app.get('/api', (req, res) => {
   res.json({ 
+    success: true,
     status: 'ok', 
     message: 'Kalos API is running',
     timestamp: new Date().toISOString()
@@ -39,6 +78,7 @@ app.get('/api', (req, res) => {
 
 app.get('/api/health', (req, res) => {
   res.json({ 
+    success: true,
     status: 'healthy',
     uptime: process.uptime(),
     timestamp: new Date().toISOString()
@@ -55,17 +95,30 @@ app.use('/api/upload', uploadRoutes);
 
 // Manejo de rutas no encontradas
 app.use('/api/*', (req, res) => {
-  res.status(404).json({ message: 'API endpoint not found' });
+  res.status(404).json({ 
+    success: false,
+    error: {
+      message: 'API endpoint not found',
+      status: 404
+    }
+  });
 });
 
 // Error handler
 app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(err.status || 500).json({ 
-    message: err.message || 'Error del servidor',
-    error: process.env.NODE_ENV === 'development' ? err : {}
+    success: false,
+    error: {
+      message: err.message || 'Error del servidor',
+      status: err.status || 500,
+      ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+    }
   });
 });
 
-// Para Vercel Serverless Functions
-export default app;
+// Para Vercel Serverless Functions - exportar el handler
+export default async (req, res) => {
+  // Permitir que Express maneje la request
+  return app(req, res);
+};
