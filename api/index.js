@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+// Cargar variables de entorno
 dotenv.config();
 
 // Conectar a MongoDB (con cache para serverless)
@@ -10,7 +11,6 @@ let cachedDb = null;
 
 const connectDB = async () => {
   if (cachedDb && mongoose.connection.readyState === 1) {
-    console.log('✅ Usando conexión existente de MongoDB');
     return cachedDb;
   }
 
@@ -21,7 +21,7 @@ const connectDB = async () => {
     });
     
     cachedDb = db;
-    console.log('✅ MongoDB conectado:', db.connection.host);
+    console.log('✅ MongoDB conectado');
     return db;
   } catch (error) {
     console.error('❌ Error conectando a MongoDB:', error.message);
@@ -29,9 +29,10 @@ const connectDB = async () => {
   }
 };
 
+// Crear app Express
 const app = express();
 
-// Middleware
+// CORS para todas las origins
 app.use(cors({
   origin: '*',
   credentials: true,
@@ -39,6 +40,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
+// Body parsers
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
@@ -48,7 +50,7 @@ app.use(async (req, res, next) => {
     await connectDB();
     next();
   } catch (error) {
-    res.status(500).json({ 
+    return res.status(500).json({ 
       success: false,
       error: { 
         message: 'Error de conexión a la base de datos',
@@ -66,8 +68,8 @@ import bookingRoutes from '../backend/routes/bookings.js';
 import userRoutes from '../backend/routes/users.js';
 import uploadRoutes from '../backend/routes/upload.js';
 
-// Health check
-app.get('/api', (req, res) => {
+// Health check en la raíz de /api
+app.get('/', (req, res) => {
   res.json({ 
     success: true,
     status: 'ok', 
@@ -76,7 +78,7 @@ app.get('/api', (req, res) => {
   });
 });
 
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ 
     success: true,
     status: 'healthy',
@@ -85,20 +87,20 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Rutas de la API
-app.use('/api/auth', authRoutes);
-app.use('/api/professionals', professionalRoutes);
-app.use('/api/services', serviceRoutes);
-app.use('/api/bookings', bookingRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/upload', uploadRoutes);
+// Montar rutas SIN el prefijo /api (Vercel ya lo añade)
+app.use('/auth', authRoutes);
+app.use('/professionals', professionalRoutes);
+app.use('/services', serviceRoutes);
+app.use('/bookings', bookingRoutes);
+app.use('/users', userRoutes);
+app.use('/upload', uploadRoutes);
 
 // Manejo de rutas no encontradas
-app.use('/api/*', (req, res) => {
+app.use('*', (req, res) => {
   res.status(404).json({ 
     success: false,
     error: {
-      message: 'API endpoint not found',
+      message: `Ruta no encontrada: ${req.method} ${req.originalUrl}`,
       status: 404
     }
   });
@@ -117,8 +119,5 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Para Vercel Serverless Functions - exportar el handler
-export default async (req, res) => {
-  // Permitir que Express maneje la request
-  return app(req, res);
-};
+// Exportar para Vercel Serverless Functions
+export default app;
